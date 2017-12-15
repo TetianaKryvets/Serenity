@@ -20,14 +20,13 @@ public class GoogleSerenityPages extends PageObject {
 
     String first_link;
 
-    @FindBy(id = "lst-ib")
+    @FindBy(name = "q")
     WebElementFacade searchField;
 
     @FindBy(xpath = "(//div/h3/a)[1]")
     WebElementFacade resultedLink;
 
     public void searchFor(String entityName) {
-        getDriver().findElement(By.id("lst-ib"));
         searchField.typeAndEnter(entityName);
     }
 
