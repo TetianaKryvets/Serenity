@@ -28,6 +28,11 @@ public class GoogleSerenitySteps extends ScenarioSteps{
         return serenity_pages.selectTheFirstLink();
     }
 
+    @Step("FInd the first link using FIndBys")
+    public String find_the_first_link_using_arraylist(String title) {
+        return serenity_pages.selectTheFirstLinkUsingArrayOfLinks(title);
+    }
+
     @Step("Verify that opened link is the first link in Search result")
     public void link_should_be_opened() {
         assertEquals("Opened link is incorrect", find_the_first_link(), getDriver().getCurrentUrl());

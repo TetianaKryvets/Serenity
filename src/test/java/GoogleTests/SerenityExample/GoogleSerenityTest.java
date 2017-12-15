@@ -33,4 +33,14 @@ public class GoogleSerenityTest {
         firstLink = serenity_steps.find_the_first_link();
         serenity_steps.link_should_be_opened();
     }
+
+    @Test
+    @Title("Open the first founded link among the list array")
+    public void GoogleTest() {
+        serenity_steps.open();
+        serenity_steps.search_by_value("qa fest");
+        firstLink = serenity_steps.find_the_first_link_using_arraylist("Конференция QA Fest 2017 и тренинги по");
+        serenity_steps.link_should_be_opened();
+
+    }
 }
